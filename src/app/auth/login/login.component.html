@@ -1,0 +1,25 @@
+<div class="uk-flex uk-flex-middle uk-flex-center uk-height-viewport"
+  style="background-image: url('assets/bg.jpg'); background-size: cover; background-position: center;">
+  <mat-card class="uk-width-1-3@m">
+    <div class="uk-flex uk-flex-center uk-margin-medium-bottom">
+      <img src="assets/logo.png" width="200" height="200" alt="">
+    </div>
+    <mat-card-content>
+      <mat-form-field class="uk-width-1-1">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="your email" [(ngModel)]="user.email">
+      </mat-form-field>
+      <mat-form-field class="uk-width-1-1">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Your password" [(ngModel)]="user.password">
+      </mat-form-field>
+      <div class="uk-flex uk-flex-bottom">
+        <div class="uk-width-expand">
+          <button mat-button routerLink="/register">Daftar</button>
+          <button mat-button routerLink="/forgot">Lupa Kata Sandi</button>
+        </div>
+        <button mat-raised-button color="primary" (click)="login()">Login</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,37 @@
+.container {
+  padding: 20px;
+}
+
+.btn-tambah {
+  margin-bottom: 30px;
+}
+
+.btn-edit,
+.logout,
+.btn-delete {
+  margin-right: 15px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.posisi {
+  margin: 0px 10px 50px 10px
+}
+
+.posisi1 {
+  margin-bottom: 16px;
+  margin-top: 16px;
+}
+
+.card-item {
+  width: 15rem;
+  position: relative;
+  background-color: #F2EDD7;
+  margin: 2rem;
+  border-radius: 8px;
+  box-shadow: 2px 8px 51px -31px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 8px 51px -31px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 8px 51px -31px rgba(0, 0, 0, 0.75);
+}

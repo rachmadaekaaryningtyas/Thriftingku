@@ -1,0 +1,47 @@
+<div style=" padding:0.2rem;">
+    <div class="container">
+        <div style="display: flex; justify-content: space-between;">
+            <h1 style="font-weight: 800; color: #402218;">Daftar Catalog</h1>
+            <button class="btn-tambah" mat-raised-button style="background-color: #865439; color: white;"
+                (click)="tambahItem({},-1)">Tambah Catalog</button>
+        </div>
+
+        <div style="display: flex; flex-wrap: wrap;">
+            <div class="card-item" *ngFor="let catalog of catalogs; let idx=index">
+                <button mat-icon-button
+                    style="position: absolute; right: 15px; top: 15px;   color: #402218; background-color: white; margin-top: -5px;  "
+                    [matMenuTriggerFor]=" menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="detailItem(catalog, idx)">
+                        <mat-icon>info</mat-icon>
+                        <span>Detail</span>
+                    </button>
+                    <button mat-menu-item (click)="tambahItem(catalog, idx)">
+                        <mat-icon>edit_note</mat-icon>
+                        <span>Edit</span>
+                    </button>
+                    <button mat-menu-item (click)="deleteItem(catalog, idx)">
+                        <mat-icon>delete_outline</mat-icon>
+                        <span>Delete</span>
+                    </button>
+                </mat-menu>
+                <div>
+                    <img style=" width:15rem; height: 15rem; object-fit: cover; border-radius: 8px;"
+                        src="assets/kaos.jpg" alt="">
+                </div>
+                <div style="width: 100%; margin: 1.5rem; align-items: center;">
+
+                    <p style="font-size: 1.2rem;"><b>{{catalog.merk}}</b></p>
+                    <p>
+                        <span>Ukuran : {{catalog.ukuran}} </span>
+                    </p>
+                    <p>
+                        <span>Harga : {{catalog.harga}}</span>
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>

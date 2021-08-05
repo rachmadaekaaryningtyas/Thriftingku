@@ -1,0 +1,63 @@
+<ng-container>
+    <!--toolbar-->
+    <mat-toolbar style="background-color: #C68B59; color: white;" class="example-header" *ngIf="userData as user">
+        <button mat-icon-button (click)="sidenav.toggle()">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span>Thrifting</span>
+        <div class="uk-width-expand">
+
+        </div>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>settings</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>account_circle</mat-icon>
+                <span>Profile</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>help</mat-icon>
+                <span>Bantuan</span>
+            </button>
+            <button mat-menu-item (click)="logout()">
+                <mat-icon>logout</mat-icon>
+                <span>Logout</span>
+            </button>
+        </mat-menu>
+
+
+    </mat-toolbar>
+    <!--end toolbar-->
+
+    <mat-sidenav-container class="admin-container">
+        <mat-sidenav #sidenav mode="side" [position]="'start'" [opened]='true' class="sidenav-left"
+            [fixedInViewport]="true" [fixedTopGap]="65" [fixedBottomGap]="0">
+
+            <mat-nav-list>
+                <mat-list-item routerLink="/admin/catalog">
+                    <mat-icon matListIcon>dashboard</mat-icon>
+                    <h3 matLine>Catalog</h3>
+                </mat-list-item>
+                <mat-list-item routerLink="/admin/kontak">
+                    <mat-icon matListIcon>info</mat-icon>
+                    <h3 matLine>About</h3>
+                </mat-list-item>
+
+            </mat-nav-list>
+
+        </mat-sidenav>
+
+        <mat-sidenav #sidenav mode="side" [position]="'end'" class="example-sidenav" [fixedInViewport]="true"
+            [fixedTopGap]="70" [fixedBottomGap]="0">
+
+        </mat-sidenav>
+        <!--sidenav content-->
+        <mat-sidenav-content style="padding: 20px; background-color: rgb(255, 255, 255);">
+            <!--halaman-halaman tampil disini-->
+            <router-outlet></router-outlet>
+        </mat-sidenav-content>
+        <!--end sidenav content-->
+    </mat-sidenav-container>
+</ng-container>
